@@ -1,9 +1,9 @@
 "use client"
 export default function CryptoDashboard() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6">
+    <div id='trade' className="min-h-screen bg-gray-900 text-white p-6">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold mb-6">Overview</h1>
+        <h1 className="text-2xl font-bold text-center mb-6">Overview</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
           <div className="bg-gray-800 rounded-lg p-4">
             <div className="flex justify-between items-center">
@@ -51,7 +51,7 @@ export default function CryptoDashboard() {
       </div>
       <div className="h-px bg-gray-700 my-8"></div>
       <div>
-        <h2 className="text-2xl font-bold mb-6">Targets</h2>
+        <h2 className="text-2xl font-bold text-center mb-6">Targets</h2>
         <div className="mb-6">
           <h3 className="text-xl font-semibold mb-4">Market Trend</h3>
           <div className="bg-gray-800 rounded-lg overflow-hidden">

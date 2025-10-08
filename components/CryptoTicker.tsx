@@ -1,14 +1,12 @@
 "use client"
 import { useEffect, useState } from 'react';
 import { TrendingUp, TrendingDown } from 'lucide-react';
-
 interface CryptoData {
   symbol: string;
   name: string;
   price: number;
   change: number;
 }
-
 export default function CryptoTicker() {
   const [cryptoData] = useState<CryptoData[]>([
     { symbol: 'BTC', name: 'Bitcoin', price: 43250.50, change: 2.34 },
@@ -20,15 +18,12 @@ export default function CryptoTicker() {
     { symbol: 'MATIC', name: 'Polygon', price: 0.78, change: 4.15 },
     { symbol: 'DOT', name: 'Polkadot', price: 6.92, change: -2.03 },
   ]);
-
   const [displayData, setDisplayData] = useState<CryptoData[]>([]);
-
   useEffect(() => {
     setDisplayData([...cryptoData, ...cryptoData]);
   }, [cryptoData]);
-
   return (
-    <div id='trade' className="bg-slate-800/50 border-y border-slate-700 py-4 overflow-hidden relative">
+    <div className="bg-slate-800/50 border-y border-slate-700 py-4 overflow-hidden relative">
       <div className="animate-scroll flex space-x-8 whitespace-nowrap">
         {displayData.map((crypto, index) => (
           <div
@@ -56,7 +51,6 @@ export default function CryptoTicker() {
           </div>
         ))}
       </div>
-
       <style>{`
         @keyframes scroll {
           0% {

@@ -1,9 +1,7 @@
 "use client"
 import { Twitter, Linkedin, MessageCircle, Send, Link, Facebook, Instagram } from 'lucide-react';
-
 export default function Footer() {
     const currentYear = new Date().getFullYear();
-
     const footerLinks = {
         QuickLink: ['Home', 'Trade', 'Contact'],
         Legal: ['Privacy Policy', 'Terms of Service', 'Cookie Policy'],
@@ -40,7 +38,6 @@ export default function Footer() {
                             </a>
                         </div>
                     </div>
-
                     {Object.entries(footerLinks).map(([category, links]) => (
                         <div key={category}>
                             <h3 className="text-white font-semibold mb-4">{category}</h3>

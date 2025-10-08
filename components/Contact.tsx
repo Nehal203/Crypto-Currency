@@ -1,21 +1,17 @@
 "use client"
 import { Mail, MapPin, Send, Twitter, Linkedin, MessageCircle, Facebook, Instagram } from 'lucide-react';
 import { useState } from 'react';
-
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -24,14 +20,12 @@ export default function Contact() {
       setTimeout(() => setIsSubmitted(false), 3000);
     }, 1000);
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
-
   return (
     <section id="contact" className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +38,6 @@ export default function Contact() {
             Provide easy access to customer support through chatbots or live chat features.
           </p>
         </div>
-
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -63,7 +56,6 @@ export default function Contact() {
                   placeholder="Enter Email Address"
                 />
               </div>
-
               <div>
                 <label htmlFor="message" className="block text-slate-300 mb-2 font-medium">
                   Your Topic
@@ -79,7 +71,6 @@ export default function Contact() {
                   placeholder="Enter Your Topic"
                 />
               </div>
-
               <button
                 type="submit"
                 disabled={isSubmitting}
@@ -98,7 +89,6 @@ export default function Contact() {
               </button>
             </form>
           </div>
-
           <div className="space-y-8">
             <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-6">
               <div className="flex items-start space-x-4">
@@ -112,7 +102,6 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-
             <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-6">
               <h3 className="text-white font-bold text-lg mb-4">Connect With Us</h3>
               <div className="flex space-x-4">
