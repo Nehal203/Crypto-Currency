@@ -69,14 +69,14 @@ export default function Navbar({ onViewChange, currentView = 'home' }: NavbarPro
                             <span>Register</span>
                         </button>
                         <button 
-                            onClick={() => handleNavigation('dash')}
+                            onClick={() => handleNavigation('dashboard')}
                             className={`flex items-center space-x-2 px-4 py-2 rounded-lg cursor-pointer duration-200 shadow-lg ${
                                 isActive('')
                                 ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
                                 : 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white'
                             }`}
                         >
-                            <span>Dash</span>
+                            <span>Dashboard</span>
                         </button>
                         {/* <button 
                             onClick={() => handleNavigation('wallet')}

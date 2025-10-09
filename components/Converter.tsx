@@ -1,22 +1,17 @@
 'use client';
-
 import { useState, useEffect } from 'react';
-
 export default function Converter() {
   const [amount, setAmount] = useState<string>('1');
   const [fromCurrency, setFromCurrency] = useState<string>('INR');
   const [toCurrency, setToCurrency] = useState<string>('BTC');
   const [convertedAmount, setConvertedAmount] = useState<string>('0.00000008');
   const [exchangeRate, setExchangeRate] = useState<number>(8.851299583210005e-8);
-
   const exchangeRates = {
     INR_TO_BTC: 8.851299583210005e-8,
     BTC_TO_INR: 11297776.00
   };
-
   const convertCurrency = () => {
     const numericAmount = parseFloat(amount) || 0;
-    
     if (fromCurrency === 'INR' && toCurrency === 'BTC') {
       const result = numericAmount * exchangeRates.INR_TO_BTC;
       setConvertedAmount(result.toFixed(8));
@@ -27,16 +22,13 @@ export default function Converter() {
       setExchangeRate(exchangeRates.BTC_TO_INR);
     }
   };
-
   const swapCurrencies = () => {
     setFromCurrency(toCurrency);
     setToCurrency(fromCurrency);
   };
-
   useEffect(() => {
     convertCurrency();
   }, [amount, fromCurrency, toCurrency]);
-
   return (
     <div id='converter' className="min-h-screen bg-slate-900 flex items-center justify-center p-4">
       <div className="bg-slate-800/50 rounded-2xl shadow-xl p-8 w-full">

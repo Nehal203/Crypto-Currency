@@ -8,8 +8,8 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Wallet from "@/components/Wallet";
-// import Dashboard from '@/components/Dashboard';
-import Dash from '@/components/Dash';
+import Dashboard from '@/components/Dashboard';
+import Dash from '@/components/Dashboard';
 export default function Home() {
   const [currentView, setCurrentView] = useState('home');
   const renderContent = () => {
@@ -22,10 +22,9 @@ export default function Home() {
         return <CryptoDashboard />;
       case 'contact':
         return <Contact />;
-      // case 'dashboard':
-      //   return <Dashboard/>;
-      case 'dash':
-        return <Dash/>;
+      case 'dashboard':
+        return <Dashboard/>;
+      
       case 'home':
       default:
         return (
